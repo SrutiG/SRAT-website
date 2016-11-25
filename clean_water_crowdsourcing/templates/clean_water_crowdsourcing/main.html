@@ -12,6 +12,9 @@
     {% if manager %}
         <h2>Manager Privileges</h2>
     {% endif %}
+    {% if admin %}
+        <h2>Admin Privileges</h2>
+    {% endif %}
     <a href="{% url 'login' %}" class="button">Logout</a>
 </div>
 
