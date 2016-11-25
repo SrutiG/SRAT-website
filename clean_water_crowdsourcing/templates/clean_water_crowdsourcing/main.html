@@ -2,7 +2,16 @@
 
 {%block content %}
 <div class="jumbotron text-center">
-    <h1>Main</h1>
+    <h1>Hey {{ username }}!</h1>
+    {% if user %}
+        <h2>User Privileges</h2>
+    {% endif %}
+    {% if worker %}
+        <h2>Worker Privileges</h2>
+    {% endif %}
+    {% if manager %}
+        <h2>Manager Privileges</h2>
+    {% endif %}
     <a href="{% url 'login' %}" class="button">Logout</a>
 </div>
 
