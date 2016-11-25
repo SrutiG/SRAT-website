@@ -5,6 +5,7 @@ from clean_water_crowdsourcing.models import Account
 from clean_water_crowdsourcing.models import WaterPurityReport
 from clean_water_crowdsourcing.models import WaterSourceReport
 from django.core.exceptions import ObjectDoesNotExist
+from django.template.defaulttags import csrf_token
 
 
 
