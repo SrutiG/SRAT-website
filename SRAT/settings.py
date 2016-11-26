@@ -26,7 +26,8 @@ SECRET_KEY = '=bv6l!6e04_m7neti8pzx(gvyfo+%izf^kg9n-3ny#9#19o3c#'
 DEBUG = True
 
 ALLOWED_HOSTS = ['srat-env.us-east-1.elasticbeanstalk.com',
-                 '127.0.0.1',]
+                 '127.0.0.1',
+                 'srat-env.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
