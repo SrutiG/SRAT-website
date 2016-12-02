@@ -1,0 +1,66 @@
+body {
+    background-color: #fcfcfc;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.main {
+    height: 91.5vh;
+    padding: 0px;
+}
+
+.navigation {
+    background-color: #fcfcfc;
+}
+
+.purple {
+    color: #46237a ! important;
+}
+
+.pink {
+    color: #ff495c ! important;
+}
+
+.green {
+    color: #3ddc97 ! important;
+}
+
+.blue {
+    color: #256eff ! important;
+}
+
+#map {
+    width: 60%;
+    height: 100%;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wsr {
+    width: 40%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    margin: 0px;
+    padding-top: 0px;
+
+}
+
+.green-border {
+   border-style: solid;
+   border-color: #3ddc97;
+   border-width: 1px;
+}
+
+.reports {
+    height: 90%;
+    width: 80%;
+    padding: 0px;
+
+}
+
+.report-items {
+    width: 100%;
+    margin: 0px;
+}

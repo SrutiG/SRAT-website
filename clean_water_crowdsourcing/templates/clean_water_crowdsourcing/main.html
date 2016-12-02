@@ -1,23 +1,88 @@
 {% extends 'clean_water_crowdsourcing/layout.html' %}
 
 {%block content %}
-<div class="jumbotron text-center">
-    <h1>Hey {{ username }}!</h1>
-    {% if user %}
-        <h2>User Privileges</h2>
-    {% endif %}
-    {% if worker %}
-        <h2>Worker Privileges</h2>
-    {% endif %}
-    {% if manager %}
-        <h2>Manager Privileges</h2>
-    {% endif %}
-    {% if admin %}
-        <h2>Admin Privileges</h2>
-    {% endif %}
-    <a href="{% url 'login' %}" class="button">Logout</a>
+<div class="main navigation">
+    <div class="jumbotron wsr">
+        <h2 class="pink text-center">Water Source Reports</h2>
+        <div class="navigation container reports green-border">
+            <ul class="list-group report-items">
+                <li class="list-group-item">
+                    <h4>Water Type Water Condition</h4>
+                    <h5>Submitted by: {{ username }}</h5>
+                    <h6>Date Time</h6>
+                    <h7>Report Number: </h7>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="map"></div>
 </div>
+<nav class="navigation navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand pink">Clean Water Crowdsourcing</a>
+        </div>
+        <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <input type="text" class="form-control green-border" placeholder="Enter Location">
+            </div>
+            <button type="submit" class="btn btn-default green green-border">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            {% if manager %}
+            <li><a class="purple" href="#">Graph</a></li>
+            {% endif %}
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle purple" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="purple" href="#">Submit Source Report</a></li>
+                    {% if manager %}
+                    <li><a class="purple" href="#">Submit Purity Report</a></li>
+                    {% endif %}
+                    <li><a class="purple" href="#">Edit Profile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="purple" href="{% url 'login' %}">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<script>
+    function initMap() {
+        var atlanta = {lat: 33.7756, lng: -84.3963};
+        var bounds = new google.maps.LatLngBounds();
 
+        var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 16,
+                  center: atlanta
+        });
+
+        var addresses = [];
+
+        for (x = 0; x < addresses.length; x++) {
+             var geocoder = new google.maps.Geocoder();
+                    geocoder.geocode( { 'address': addresses[x]}, makeCallback(x, bounds));
+        }
+        function makeCallback(addressIndex, bounds) {
+        var geocodeCallBack = function(results, status) {
+            var i = addressIndex;
+            if (status == google.maps.GeocoderStatus.OK) {
+                    var latitude = results[0].geometry.location.lat();
+                    var longitude = results[0].geometry.location.lng();
+                    var marker = new google.maps.Marker({
+                    position: {lat: latitude, lng: longitude}, map: map});
+                    bounds.extend(marker.position);
+               }
+               map.fitBounds(bounds);
+
+            }
+            return geocodeCallBack;
+        }
+     }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxD6fXkottjSqRWsVv5YbWWerS-jk2-tQ&callback=initMap">
+</script>
 {% endblock %}
 
 </html>

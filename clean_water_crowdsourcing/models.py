@@ -21,7 +21,7 @@ class Account(models.Model):
         return self.address_street + ", " + self.address_city + ", " + self.address_state + " " + self.address_zip
 
 class WaterSourceReport(models.Model):
-    reporter_name = models.CharField(max_length=20)
+    reporter_name = models.ForeignKey(Account, on_delete=models.CASCADE)
     report_number = models.AutoField(primary_key=True)
     water_type = models.CharField(max_length=20)
     water_condition = models.CharField(max_length=20)
