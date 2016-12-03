@@ -64,3 +64,15 @@ body {
     width: 100%;
     margin: 0px;
 }
+
+.primary-button {
+    background-color: #256eff;
+    color: #fcfcfc;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fcfcfc;
+}
+
+.primary-button:hover {
+    background-color: #256eff;
+}
