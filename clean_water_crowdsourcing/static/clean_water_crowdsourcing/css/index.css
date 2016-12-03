@@ -119,3 +119,13 @@ body {
     width: 25%;
     display: inline-block;
 }
+
+.city-form, .zip-form {
+    width: 19.5%;
+    display: inline-block;
+}
+
+.state-form {
+    width: 10%;
+    display: inline-block;
+}

@@ -102,11 +102,16 @@
         </div>
         <label class="purple">Email</label>
         <div class="form-group row">
-            <input class="input-lg submit-form form-control-inline" id="email" name="email" type="text" placeholder = "Email">
+            <input class="input-lg submit-form form-control-inline" id="email" name="email" type="text" value="{{ account.email }}">
         </div>
         <label class="purple">Address</label>
         <div class="form-group row">
-            <input class="input-lg submit-form form-control-inline" id="address" name="address" type="text" value="Address">
+            <input class="input-sm submit-form form-control-inline" id="address_street" name="address_street" type="text" value="{{ account.address_street }}">
+            <br>
+            <input class="input-sm city-form form-control-inline" id="address_city" name="address_city" type="text" value="{{ account.address_city }}">
+            <input class="input-sm state-form form-control-inline" id="address_state" name="address_state" type="text" value="{{ account.address_state }}">
+            <input class="input-sm zip-form form-control-inline" id="address_zip" name="address_zip" type="text" value="{{ account.address_zip }}">
+
         </div>
         <label class="purple">Phone</label>
         <div class="form-group row">

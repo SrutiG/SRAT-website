@@ -52,6 +52,7 @@ def register(request):
         firstname = request.POST.get('firstname')
         lastname = request.POST.get('lastname')
         username = request.POST.get('username')
+        email = request.POST.get('email')
         password = request.POST.get('password')
         streetName = request.POST.get('streetName')
         cityName = request.POST.get('cityName')
@@ -60,7 +61,7 @@ def register(request):
         phone = request.POST.get('phone')
         accountType = request.POST.get('type')
 
-        Account.objects.create(first_name = firstname, last_name = lastname, username = username,
+        Account.objects.create(first_name = firstname, last_name = lastname, email=email, username = username,
                                password = password, address_street = streetName, address_city = cityName,
                                address_zip = zip, address_state = state, phone = phone, account_type = accountType)
         return redirect('login')

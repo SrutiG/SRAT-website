@@ -6,6 +6,7 @@ class Account(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
+    email=models.CharField(max_length=30, unique=True)
     username = models.CharField(max_length=20, primary_key = True)
     phone = models.CharField(max_length=11)
     address_street = models.CharField(max_length=20)
@@ -36,6 +37,7 @@ class WaterSourceReport(models.Model):
         return self.report_number == other.report_number and self.water_location == other.water_location
 
 class WaterPurityReport(models.Model):
+    reporter_name=models.ForeignKey(Account, on_delete=models.CASCADE)
     report_number = models.AutoField(primary_key=True)
     water_location = models.ForeignKey(WaterSourceReport, to_field = 'water_location', on_delete=models.CASCADE)
     water_condition = models.CharField(max_length=20)
