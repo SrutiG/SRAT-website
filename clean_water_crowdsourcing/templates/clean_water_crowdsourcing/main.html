@@ -53,6 +53,68 @@
 
     </form>
 </div>
+<div class="green-border submit-purity-report navigation">
+    <form class="form text-center" name="submit-source-report" method="post">
+        {% csrf_token %}
+        <h1 class="pink text-center">Submit Water Purity Report</h1>
+        <label class="purple">Water Location</label>
+        <div class="form-group row">
+            <select name="water-location" id="water-location" class="input-lg submit-form form-control-inline">
+                {% for report in sourceReports %}
+                <option>{{ report.water_location }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <label class="purple">Water Condition</label>
+        <div class="form-group row">
+            <select name="water-purity-condition" id="water-purity-condition" class="input-lg submit-form form-control-inline">
+                <option>Safe</option>
+                <option>Treatable</option>
+                <option>Unsafe</option>
+            </select>
+        </div>
+        <label class="purple">Virus PPM</label>
+        <div class="form-group row">
+            <input class="input-lg submit-form form-control-inline" id="virus-ppm" name="virus-ppm" type="text" placeholder = "Enter Integer">
+        </div>
+        <label class="purple">Contaminant PPM</label>
+        <div class="form-group row">
+            <input class="input-lg submit-form form-control-inline" id="contaminant-ppm" name="contaminant-ppm" type="text" placeholder = "Enter Integer">
+        </div>
+        <div class="form-group row" style="margin-top: 5px;">
+            <button class="btn btn-lg btn-default primary-button form-control-inline" onclick="submitPurityReport()" type="submit">Submit</button>
+            <button id="cancel-purity-report" class="btn btn-lg btn-default primary-button form-control-inline" type="button">Cancel</button>
+        </div>
+    </form>
+</div>
+<div class="green-border edit-profile navigation">
+    <form class="form text-center" name="submit-source-report" method="post">
+        {% csrf_token %}
+        <h1 class="pink text-center">Edit Profile</h1>
+        <label class="purple">Name</label>
+        <div class="form-group row">
+            <input class="input-lg first-name form-control-inline" id="first-name" name="first-name" type="text" placeholder = "First Name">
+            <input class="input-lg last-name form-control-inline" id="last-name" name="first-name" type="text" placeholder = "Last Name">
+
+        </div>
+        <label class="purple">Email</label>
+        <div class="form-group row">
+            <input class="input-lg submit-form form-control-inline" id="email" name="email" type="text" placeholder = "Email">
+        </div>
+        <label class="purple">Address</label>
+        <div class="form-group row">
+            <input class="input-lg submit-form form-control-inline" id="address" name="address" type="text" placeholder = "Home Address">
+        </div>
+        <label class="purple">Phone</label>
+        <div class="form-group row">
+            <input class="input-lg submit-form form-control-inline" id="phone" name="phone" type="text" placeholder = "phone">
+        </div>
+        <div class="form-group row" style="margin-top: 5px;">
+            <button class="btn btn-lg btn-default primary-button form-control-inline" onclick="editProfile()" type="submit">Submit</button>
+            <button id="cancel-edit-profile" class="btn btn-lg btn-default primary-button form-control-inline" type="button">Cancel</button>
+        </div>
+    </form>
+</div>
 
 <nav class="navigation navbar navbar-default navbar-fixed-bottom">
     <div class="container">
@@ -74,9 +136,9 @@
                 <ul class="dropdown-menu">
                     <li><a class="purple" id="submit-source-nav" href="#">Submit Source Report</a></li>
                     {% if manager %}
-                    <li><a class="purple" href="#">Submit Purity Report</a></li>
+                    <li><a class="purple" id="submit-purity-nav" href="#">Submit Purity Report</a></li>
                     {% endif %}
-                    <li><a class="purple" href="#">Edit Profile</a></li>
+                    <li><a class="purple" id = "edit-profile-nav" href="#">Edit Profile</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a class="purple" href="{% url 'login' %}">Logout</a></li>
                 </ul>

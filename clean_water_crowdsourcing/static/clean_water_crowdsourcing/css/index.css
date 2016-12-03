@@ -31,6 +31,10 @@ body {
     color: #256eff ! important;
 }
 
+.white {
+    color: #fcfcfc ! important;
+}
+
 #map {
     width: 60%;
     height: 100%;
@@ -47,7 +51,6 @@ body {
     margin: 0px;
     padding-top: 0px;
     border-right: solid 1px #46237a;
-
 }
 
 .green-border {
@@ -81,11 +84,11 @@ body {
     background-color: #256eff;
 }
 
-.submit-source-report {
+.submit-source-report, .submit-purity-report, .edit-profile {
     display: none;
     position: absolute;
     width: 50%;
-    height: 70%;
+    height: 78%;
     top: 7vh;
     right: 25%;
     left: 25%;
@@ -94,5 +97,10 @@ body {
 
 .submit-form {
     width: 50%;
+    display: inline-block;
+}
+
+.first-name, .last-name {
+    width: 25%;
     display: inline-block;
 }
