@@ -7,6 +7,7 @@ body {
 .main {
     height: 91.5vh;
     padding: 0px;
+    border-bottom: solid 1px #46237a;
 }
 
 .navigation {
@@ -44,6 +45,7 @@ body {
     float: left;
     margin: 0px;
     padding-top: 0px;
+    border-right: solid 1px #46237a;
 
 }
 
@@ -57,6 +59,7 @@ body {
     height: 90%;
     width: 80%;
     padding: 0px;
+    overflow-y: scroll;
 
 }
 
