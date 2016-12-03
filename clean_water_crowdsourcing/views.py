@@ -6,6 +6,7 @@ from clean_water_crowdsourcing.models import WaterPurityReport
 from clean_water_crowdsourcing.models import WaterSourceReport
 from django.core.exceptions import ObjectDoesNotExist
 from django.template.defaulttags import csrf_token
+from django.views.decorators.csrf import csrf_exempt
 
 
 
@@ -76,13 +77,13 @@ def main(request):
     sourceReports = WaterSourceReport.objects.all()
     return render(request, 'clean_water_crowdsourcing/main.html', {'username': username, 'user': user, 'worker': worker,
                                                                    'manager': manager, 'admin': admin, 'sourceReports': sourceReports})
-
+@csrf_exempt
 def addReport(request):
     username = request.session.get('username')
+    account = Account.objects.get(username=username)
     water_source_location = request.POST.get('water-source-address')
     water_source_type = request.POST.get('water-source-type')
     water_source_condition = request.POST.get('water-source-condition')
-    print(water_source_condition)
-    print(water_source_location)
-    print(water_source_type)
+    WaterSourceReport.objects.create(reporter_name=account, water_type=water_source_type, water_location = water_source_location
+                                     , water_condition = water_source_condition)
     return redirect('main')
