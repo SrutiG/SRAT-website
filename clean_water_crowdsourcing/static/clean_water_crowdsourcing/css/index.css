@@ -8,6 +8,7 @@ body {
     height: 91.5vh;
     padding: 0px;
     border-bottom: solid 1px #46237a;
+    position: relative;
 }
 
 .navigation {
@@ -78,4 +79,20 @@ body {
 
 .primary-button:hover {
     background-color: #256eff;
+}
+
+.submit-source-report {
+    display: none;
+    position: absolute;
+    width: 50%;
+    height: 70%;
+    top: 7vh;
+    right: 25%;
+    left: 25%;
+    border-radius: 10px;
+}
+
+.submit-form {
+    width: 50%;
+    display: inline-block;
 }

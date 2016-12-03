@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2cad5796-10cb-4c9a-94d4-baefcce4fb63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css" afterPath="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js" afterPath="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html" afterPath="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html" />
     </list>
     <ignored path="SRAT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +39,20 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="195">
+              <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+              <folding>
+                <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -67,8 +81,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            <state relative-caret-position="366">
+              <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -118,7 +132,6 @@
         <option value="$PROJECT_DIR$/SRAT/urls.py" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/index.html" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/urls.py" />
-        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/images/__init__.py" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/admin.py" />
         <option value="$PROJECT_DIR$/SRAT/wsgi.py" />
@@ -130,9 +143,10 @@
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/layout.html" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/views.py" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/models.py" />
-        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/login.html" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/register.html" />
+        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js" />
+        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css" />
       </list>
     </option>
@@ -233,6 +247,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="clean_water_crowdsourcing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SRAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SRAT" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clean_water_crowdsourcing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clean_water_crowdsourcing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -798,14 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -942,14 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="63" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -958,18 +982,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="63" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="195">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="366">
+          <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
           <folding />
         </state>
       </provider>

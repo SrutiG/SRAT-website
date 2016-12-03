@@ -18,6 +18,42 @@
     </div>
     <div id="map"></div>
 </div>
+<div class="green-border submit-source-report navigation">
+    <form class="form text-center" name="submit-source-report" method="post">
+        {% csrf_token %}
+        <h1 class="pink text-center">Submit Water Source Report</h1>
+        <label class="purple">Water Location: </label>
+        <div class="form-group row">
+            <input class="input-lg submit-form form-control-inline" name="water-address" type="text" placeholder = "Enter Address">
+        </div>
+        <label class="purple">Type of Water</label>
+        <div class="form-group row">
+            <select name="water-type" id="water-source-type" class="input-lg submit-form form-control-inline">
+                <option>Bottled</option>
+                <option>Well</option>
+                <option>Stream</option>
+                <option>Lake</option>
+                <option>Spring</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <label class="purple">Water Condition</label>
+        <div class="form-group row">
+            <select name="water-condition" id="water-source-condition" class="input-lg submit-form form-control-inline">
+                <option>Waste</option>
+                <option>Treatable-Clear</option>
+                <option>Treatable-Muddy</option>
+                <option>Potable</option>
+            </select>
+        </div>
+        <div class="form-group row" style="margin-top: 5px;">
+            <button class="btn btn-lg btn-default primary-button form-control-inline" type="submit">Submit</button>
+            <button id="cancel-source-report" class="btn btn-lg btn-default primary-button form-control-inline" type="button">Cancel</button>
+        </div>
+
+    </form>
+</div>
+
 <nav class="navigation navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <div class="navbar-header">
@@ -36,7 +72,7 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle purple" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="purple" href="#">Submit Source Report</a></li>
+                    <li><a class="purple" id="submit-source-nav" href="#">Submit Source Report</a></li>
                     {% if manager %}
                     <li><a class="purple" href="#">Submit Purity Report</a></li>
                     {% endif %}
