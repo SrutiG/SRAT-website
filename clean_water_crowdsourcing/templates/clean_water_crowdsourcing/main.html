@@ -6,12 +6,13 @@
         <h2 class="pink text-center">Water Source Reports</h2>
         <div class="navigation container reports green-border">
             <ul class="list-group report-items">
+                {% for report in sourceReports %}
                 <li class="list-group-item">
-                    <h4>Water Type Water Condition</h4>
-                    <h5>Submitted by: {{ username }}</h5>
-                    <h6>Date Time</h6>
-                    <h7>Report Number: </h7>
+                    <h4 class="blue">{{ report.water_type }} {{ report.water_condition }}</h4>
+                    <h5 class="purple">Submitted by: {{ report.reporter_name }} on {{ report.report_date }}</h5>
+                    <h7 class="purple">Report Number: {{ report.report_number }}</h7>
                 </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -53,11 +54,11 @@
         var bounds = new google.maps.LatLngBounds();
 
         var map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 16,
+                  zoom: 4,
                   center: atlanta
         });
 
-        var addresses = [];
+        var addresses = [{% for report in sourceReports %}'{{ report.water_location }}', {% endfor %}];
 
         for (x = 0; x < addresses.length; x++) {
              var geocoder = new google.maps.Geocoder();
@@ -70,7 +71,7 @@
                     var latitude = results[0].geometry.location.lat();
                     var longitude = results[0].geometry.location.lng();
                     var marker = new google.maps.Marker({
-                    position: {lat: latitude, lng: longitude}, map: map});
+                    position: {lat: latitude, lng: longitude}, map: map, label: (i+1).toString()});
                     bounds.extend(marker.position);
                }
                map.fitBounds(bounds);

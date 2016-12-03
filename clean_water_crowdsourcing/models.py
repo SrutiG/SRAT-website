@@ -15,7 +15,7 @@ class Account(models.Model):
     account_type = models.CharField(max_length=1)
 
     def __str__(self):
-        return self.first_name + self.last_name
+        return self.first_name + " " + self.last_name
 
     def Address(self):
         return self.address_street + ", " + self.address_city + ", " + self.address_state + " " + self.address_zip
@@ -29,7 +29,7 @@ class WaterSourceReport(models.Model):
     report_date = models.DateField(auto_now_add = True)
 
     def __str__(self):
-        return "Number: " + self.report_number + " Date: " + self.report_date + " Username: " + self.reporter_name + \
+        return "Number: " + str(self.report_number) + \
                " Water Type: " + self.water_type + " Water Condition: " + self.water_condition + " Water Location: " + self.water_location
 
     def __eq__(self, other):

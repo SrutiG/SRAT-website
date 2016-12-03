@@ -73,5 +73,6 @@ def main(request):
     manager = request.session.get('manager')
     admin = request.session.get('admin')
     account = Account.objects.get(username=username)
+    sourceReports = WaterSourceReport.objects.all()
     return render(request, 'clean_water_crowdsourcing/main.html', {'username': username, 'user': user, 'worker': worker,
-                                                                   'manager': manager, 'admin': admin})
+                                                                   'manager': manager, 'admin': admin, 'sourceReports': sourceReports})
