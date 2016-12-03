@@ -76,3 +76,13 @@ def main(request):
     sourceReports = WaterSourceReport.objects.all()
     return render(request, 'clean_water_crowdsourcing/main.html', {'username': username, 'user': user, 'worker': worker,
                                                                    'manager': manager, 'admin': admin, 'sourceReports': sourceReports})
+
+def addReport(request):
+    username = request.session.get('username')
+    water_source_location = request.POST.get('water-source-address')
+    water_source_type = request.POST.get('water-source-type')
+    water_source_condition = request.POST.get('water-source-condition')
+    print(water_source_condition)
+    print(water_source_location)
+    print(water_source_type)
+    return redirect('main')
