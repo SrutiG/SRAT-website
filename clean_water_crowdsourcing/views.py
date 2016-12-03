@@ -76,7 +76,7 @@ def main(request):
     account = Account.objects.get(username=username)
     sourceReports = WaterSourceReport.objects.all()
     return render(request, 'clean_water_crowdsourcing/main.html', {'username': username, 'user': user, 'worker': worker,
-                                                                   'manager': manager, 'admin': admin, 'sourceReports': sourceReports})
+                                                                   'manager': manager, 'admin': admin, 'account': account, 'sourceReports': sourceReports})
 @csrf_exempt
 def addReport(request):
     username = request.session.get('username')
@@ -86,4 +86,9 @@ def addReport(request):
     water_source_condition = request.POST.get('water-source-condition')
     WaterSourceReport.objects.create(reporter_name=account, water_type=water_source_type, water_location = water_source_location
                                      , water_condition = water_source_condition)
+    return redirect('main')
+
+def deleteReport(request, reportNum):
+    instance = WaterSourceReport.objects.get(report_number = reportNum)
+    instance.delete()
     return redirect('main')
