@@ -8,7 +8,11 @@
             <ul class="list-group report-items">
                 {% for report in sourceReports %}
                 <li class="list-group-item">
+                    {% if manager %}
+                    <a href="#" class="view-purity"><h5 class="blue"><b>Type:</b> {{ report.water_type }} <b>Condition:</b> {{ report.water_condition }}</h5></a>
+                    {% else %}
                     <h5 class="blue"><b>Type:</b> {{ report.water_type }} <b>Condition:</b> {{ report.water_condition }}</h5>
+                    {% endif %}
                     <h5 class="purple">Submitted by {{ report.reporter_name }} on {{ report.report_date }}</h5>
                     <h5 class="purple">Report Number {{ report.report_number }}</h5>
                     {% if admin %}
@@ -123,7 +127,12 @@
         </div>
     </form>
 </div>
-
+<div class="green-border view-purity-reports navigation text-center">
+    <h1 class="pink">Water Purity Reports</h1>
+    <div class="row" style="margin-top: 5px;">
+        <button id="cancel-view-purity" class="btn btn-lg btn-default primary-button" type="button">Cancel</button>
+    </div>
+</div>
 <nav class="navigation navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <div class="navbar-header">

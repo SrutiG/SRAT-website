@@ -99,7 +99,7 @@ body {
     background-color: var(--primaryDark);
 }
 
-.submit-source-report, .submit-purity-report, .edit-profile {
+.submit-source-report, .submit-purity-report, .edit-profile, .view-purity-reports {
     display: none;
     position: absolute;
     width: 50%;

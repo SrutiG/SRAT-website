@@ -31,6 +31,14 @@ $(document).ready(function() {
         $(".edit-profile").hide();
         $(".main").css("opacity", 1);
     })
+    $(".view-purity").click(function() {
+            $(".view-purity-reports").show();
+            $(".main").css("opacity", 0.3);
+    })
+    $("#cancel-view-purity").click(function() {
+        $(".view-purity-reports").hide();
+        $(".main").css("opacity", 1);
+    })
     function getCookie(name) {
         var cookieValue = null;
         if (document.cookie && document.cookie !== '') {
