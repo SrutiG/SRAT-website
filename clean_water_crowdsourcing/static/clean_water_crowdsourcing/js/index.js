@@ -31,12 +31,20 @@ $(document).ready(function() {
         $(".edit-profile").hide();
         $(".main").css("opacity", 1);
     })
-    $(".view-purity").click(function() {
+    $("#view-purity").click(function() {
             $(".view-purity-reports").show();
             $(".main").css("opacity", 0.3);
     })
     $("#cancel-view-purity").click(function() {
         $(".view-purity-reports").hide();
+        $(".main").css("opacity", 1);
+    })
+    $(".view-graph").click(function() {
+            $(".view-graph-display").show();
+            $(".main").css("opacity", 0.3);
+    })
+    $("#cancel-graph").click(function() {
+        $(".view-graph-display").hide();
         $(".main").css("opacity", 1);
     })
     function getCookie(name) {

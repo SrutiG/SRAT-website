@@ -99,7 +99,7 @@ body {
     background-color: var(--primaryDark);
 }
 
-.submit-source-report, .submit-purity-report, .edit-profile, .view-purity-reports {
+.submit-source-report, .submit-purity-report, .edit-profile, .view-purity-reports, .view-graph-display {
     display: none;
     position: absolute;
     width: 50%;
@@ -128,4 +128,15 @@ body {
 .state-form {
     width: 10%;
     display: inline-block;
+}
+
+.purity-reports, .graph {
+    height: 70%;
+    overflow-y: scroll;
+}
+
+.wpr-table {
+    display: inline-block;
+    width: 90%;
+    margin: auto;
 }

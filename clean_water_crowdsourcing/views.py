@@ -76,8 +76,10 @@ def main(request):
     admin = request.session.get('admin')
     account = Account.objects.get(username=username)
     sourceReports = WaterSourceReport.objects.all()
+    purityReports = WaterPurityReport.objects.all()
     return render(request, 'clean_water_crowdsourcing/main.html', {'username': username, 'user': user, 'worker': worker,
-                                                                   'manager': manager, 'admin': admin, 'account': account, 'sourceReports': sourceReports})
+                                                                   'manager': manager, 'admin': admin, 'account': account,
+                                                                   'sourceReports': sourceReports, 'purityReports': purityReports})
 @csrf_exempt
 def addReport(request):
     username = request.session.get('username')
@@ -87,6 +89,19 @@ def addReport(request):
     water_source_condition = request.POST.get('water-source-condition')
     WaterSourceReport.objects.create(reporter_name=account, water_type=water_source_type, water_location = water_source_location
                                      , water_condition = water_source_condition)
+    return redirect('main')
+
+@csrf_exempt
+def addPurityReport(request):
+    username = request.session.get('username')
+    account=Account.objects.get(username=username)
+    water_location = request.POST.get('water-purity-address')
+    water_purity_condition = request.POST.get('water-purity-condition')
+    virus_PPM = request.POST.get('virus-ppm')
+    contaminant_PPM = request.POST.get('contaminant-ppm')
+    wsr = WaterSourceReport.objects.get(water_location = water_location)
+    WaterPurityReport.objects.create(reporter_name = account, water_location = wsr, water_condition = water_purity_condition,
+                                     virus_ppm = virus_PPM, contaminant_ppm = contaminant_PPM)
     return redirect('main')
 
 def deleteReport(request, reportNum):

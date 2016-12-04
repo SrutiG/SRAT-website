@@ -5,6 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css" afterPath="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js" afterPath="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html" afterPath="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean_water_crowdsourcing/urls.py" afterPath="$PROJECT_DIR$/clean_water_crowdsourcing/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clean_water_crowdsourcing/views.py" afterPath="$PROJECT_DIR$/clean_water_crowdsourcing/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
     </list>
     <ignored path="SRAT.iws" />
@@ -28,8 +30,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            <state relative-caret-position="411">
+              <caret line="103" column="93" selection-start-line="103" selection-start-column="93" selection-end-line="103" selection-end-column="93" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -40,23 +42,24 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+            <state relative-caret-position="342">
+              <caret line="147" column="55" selection-start-line="147" selection-start-column="55" selection-end-line="147" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#form#0;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#5;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            <state relative-caret-position="375">
+              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -82,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="101" column="81" selection-start-line="101" selection-start-column="81" selection-end-line="101" selection-end-column="81" />
+            <state relative-caret-position="531">
+              <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,7 +98,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="555">
               <caret line="39" column="70" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
               <folding />
             </state>
@@ -106,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+              <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -145,14 +148,14 @@
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/layout.html" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/login.html" />
         <option value="$PROJECT_DIR$/SRAT/settings.py" />
-        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/urls.py" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/models.py" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/register.html" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/data.py" />
-        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/views.py" />
-        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css" />
-        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html" />
         <option value="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js" />
+        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/urls.py" />
+        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/views.py" />
+        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html" />
+        <option value="$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css" />
       </list>
     </option>
   </component>
@@ -871,14 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.ebextensions/django.config">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -891,14 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/aws_credential_file">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -953,14 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SRAT/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -974,17 +953,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="18" selection-end-column="82" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -997,39 +966,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/models.py">
+    <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="39" column="70" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
+        <state relative-caret-position="105">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css">
+    <entry file="file://$PROJECT_DIR$/.elasticbeanstalk/aws_credential_file">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="101" column="81" selection-start-line="101" selection-start-column="81" selection-end-line="101" selection-end-column="81" />
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#form#0;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        <state relative-caret-position="375">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="39" column="70" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="103" column="93" selection-start-line="103" selection-start-column="93" selection-end-line="103" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/templates/clean_water_crowdsourcing/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="147" column="55" selection-start-line="147" selection-start-column="55" selection-end-line="147" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#5;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clean_water_crowdsourcing/static/clean_water_crowdsourcing/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding />
         </state>
       </provider>
