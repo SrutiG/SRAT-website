@@ -104,6 +104,30 @@ def addPurityReport(request):
                                      virus_ppm = virus_PPM, contaminant_ppm = contaminant_PPM)
     return redirect('main')
 
+@csrf_exempt
+def editProfile(request):
+    username = request.session.get('username')
+    account = Account.objects.get(username=username)
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    email = request.POST.get('email')
+    address_street = request.POST.get('address_street')
+    address_city = request.POST.get('address_city')
+    address_zip = request.POST.get('address_zip')
+    address_state = request.POST.get('address_state')
+    phone = request.POST.get('phone')
+    account.first_name = first_name
+    account.last_name = last_name
+    account.email = email
+    account.address_city = address_city
+    account.address_state = address_state
+    account.address_zip = address_zip
+    account.address_street = address_street
+    account.phone = phone
+    account.save()
+    return redirect('main')
+
+
 def deleteReport(request, reportNum):
     instance = WaterSourceReport.objects.get(report_number = reportNum)
     instance.delete()

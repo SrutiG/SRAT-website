@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'addReport/', views.addReport, name='addReport'),
     url(r'addPurityReport/', views.addPurityReport, name='addPurityReport'),
     url(r'deleteReport/(?P<reportNum>[0-9]+)', views.deleteReport, name='deleteReport'),
+    url(r'editProfile/', views.editProfile, name='editProfile'),
 ]
