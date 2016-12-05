@@ -163,7 +163,7 @@
 </div>
 <div class="green-border view-graph-display navigation text-center">
     <h2 class="pink title" id="graph-title" style="padding: 10px;">Graph for Location</h2>
-    <div class="graph">
+    <div class="graph" id="graph">
 
     </div>
     <div class="row" style="margin-top: 5px;">
@@ -302,6 +302,14 @@
             url: '../getPurityReports/' + urlval,
             data: {'location': address},
             success: function(response) {
+                var num = response["reports"].length;
+                $("#num").remove();
+                if (num == 1) {
+                    $("#graph").append("<h5 class='purple' id='num'>" + num + " report</h5>");
+
+                } else {
+                    $("#graph").append("<h5 class='purple' id='num'>" + num + " reports</h5>");
+                }
                 createGraph(response);
             },
             error: function(error) {
@@ -311,12 +319,69 @@
     }
 
     function createGraph(response) {
-        console.log(response)
-        for (item in response) {
-            console.log(response[item]);
-        }
+        d3.select("svg").remove();
+        var	margin = {top: 30, right: 50, bottom: 30, left: 50},
+        width = 380 - margin.left - margin.right,
+        height = 250 - margin.top - margin.bottom;
+
+        // Parse the date / time
+        var	parseDate = d3.time.format("%Y-%m-%d").parse;
+
+        // Set the ranges
+        var	x = d3.time.scale().range([0, width]);
+        var	y = d3.scale.linear().range([height, 0]);
+
+        var reports = response["reports"]
+
+        // Define the axes
+        var	xAxis = d3.svg.axis().scale(x)
+            .orient("bottom").ticks(5);
+
+        var	yAxis = d3.svg.axis().scale(y)
+            .orient("left").ticks(5);
+
+        // Define the line
+        var	valueline = d3.svg.line()
+            .x(function(reports) { return x(parseDate(reports.date)); })
+            .y(function(reports) { console.log(y(reports.virus_ppm)); return y(reports.virus_ppm); });
+
+        var contaminantline = d3.svg.line()
+            .x(function(reports) { return x(parseDate(reports.date)); })
+            .y(function(reports) { console.log(y(reports.contaminant_ppm)); return y(reports.contaminant_ppm); });
+        // Adds the svg canvas
+        var	svg = d3.select("#graph")
+            .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        // Get the data
+        x.domain(d3.extent(reports, function(reports) { return parseDate(reports.date); }));
+        y.domain([0, d3.max(reports, function(reports) { return reports.max; })]);
+
+        // Add the valueline path.
+        svg.append("path")
+            .attr("class", "line")
+            .attr("d", valueline(reports));
+        svg.append("path")
+            .attr("class", "secondline")
+            .attr("d", contaminantline(reports));
+
+        // Add the X Axis
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        // Add the Y Axis
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis);
+
+
 
     }
+
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxD6fXkottjSqRWsVv5YbWWerS-jk2-tQ&callback=initMap">

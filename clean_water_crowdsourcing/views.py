@@ -136,10 +136,13 @@ def deleteReport(request, reportNum):
 
 def getPurityReports(request, location):
     response_data = {}
+    reports = []
     address = request.GET.get('location')
     purityLocations = WaterPurityReport.objects.filter(water_location = address)
     print(location)
     for item in purityLocations:
-        response_data[str(item.report_date)] = (item.virus_ppm, item.contaminant_ppm)
+        reports.append({"date": str(item.report_date), "virus_ppm":item.virus_ppm, "contaminant_ppm":item.contaminant_ppm, "max" : max(item.virus_ppm, item.contaminant_ppm)})
+    response_data["reports"] = reports
     response = JsonResponse(response_data)
+    print(response_data)
     return response
