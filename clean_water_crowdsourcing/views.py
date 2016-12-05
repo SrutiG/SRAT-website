@@ -7,6 +7,7 @@ from clean_water_crowdsourcing.models import WaterSourceReport
 from django.core.exceptions import ObjectDoesNotExist
 from django.template.defaulttags import csrf_token
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 
 
@@ -132,3 +133,13 @@ def deleteReport(request, reportNum):
     instance = WaterSourceReport.objects.get(report_number = reportNum)
     instance.delete()
     return redirect('main')
+
+def getPurityReports(request, location):
+    response_data = {}
+    address = request.GET.get('location')
+    purityLocations = WaterPurityReport.objects.filter(water_location = address)
+    print(location)
+    for item in purityLocations:
+        response_data[str(item.report_date)] = (item.virus_ppm, item.contaminant_ppm)
+    response = JsonResponse(response_data)
+    return response

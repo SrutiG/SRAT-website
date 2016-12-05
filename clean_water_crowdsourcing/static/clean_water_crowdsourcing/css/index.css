@@ -130,9 +130,13 @@ body {
     display: inline-block;
 }
 
-.purity-reports, .graph {
+.purity-reports {
     height: 70%;
     overflow-y: scroll;
+}
+
+.graph {
+    height: 60%;
 }
 
 .wpr-table {

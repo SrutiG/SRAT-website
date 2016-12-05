@@ -9,7 +9,7 @@
                 {% for report in sourceReports %}
                 <li class="list-group-item">
                     {% if manager %}
-                    <a href="#" class="view-graph"><h5 class="blue"><b>Type:</b> {{ report.water_type }} <b>Condition:</b> {{ report.water_condition }}</h5></a>
+                    <a href="#" class="view-graph" onclick="viewGraph('{{ report.water_location }}')"><h5 class="blue"><b>Type:</b> {{ report.water_type }} <b>Condition:</b> {{ report.water_condition }}</h5></a>
                     {% else %}
                     <h5 class="blue"><b>Type:</b> {{ report.water_type }} <b>Condition:</b> {{ report.water_condition }}</h5>
                     {% endif %}
@@ -162,7 +162,7 @@
     </div>
 </div>
 <div class="green-border view-graph-display navigation text-center">
-    <h1 class="pink title">Graph for Location</h1>
+    <h2 class="pink title" id="graph-title" style="padding: 10px;">Graph for Location</h2>
     <div class="graph">
 
     </div>
@@ -293,6 +293,29 @@
                 console.log(error);
             }
         });
+    }
+    function viewGraph(address) {
+        $("#graph-title").html("Graph for " + address);
+        var mid = address.split(" ");
+        var urlval = mid.join("_");
+        $.ajax({
+            url: '../getPurityReports/' + urlval,
+            data: {'location': address},
+            success: function(response) {
+                createGraph(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+
+    function createGraph(response) {
+        console.log(response)
+        for (item in response) {
+            console.log(response[item]);
+        }
+
     }
 </script>
 <script async defer

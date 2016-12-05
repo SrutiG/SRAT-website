@@ -47,8 +47,8 @@ class WaterPurityReport(models.Model):
 
     def __str__(self):
         return "Number: " + self.report_number + " Date: " + self.report_date + " Water Location: " + self.water_location + \
-               " Water Condition: " + self.water_condition + " Contaminant PPM: " + self.contaminant_ppm + \
-               " Virus PPM: " + self.virus_ppm
+               " Water Condition: " + self.water_condition + " Contaminant PPM: " + str(self.contaminant_ppm) + \
+               " Virus PPM: " + str(self.virus_ppm)
 
 
 
