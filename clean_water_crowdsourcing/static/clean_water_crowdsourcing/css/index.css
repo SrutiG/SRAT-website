@@ -110,6 +110,7 @@ body {
     border-radius: 10px;
 }
 
+
 .submit-form {
     width: 50%;
     display: inline-block;
@@ -136,7 +137,9 @@ body {
 }
 
 .graph {
-    height: 60%;
+    height: 65%;
+    width: 85%;
+    margin: auto;
 }
 
 .wpr-table {
@@ -145,16 +148,30 @@ body {
     margin: auto;
 }
 
-path {
-  stroke: steelblue;
+.line {
+  stroke: var(--primary);
   stroke-width: 2;
   fill: none;
+}
+
+.secondline {
+  stroke: var(--primaryDark);
+    stroke-width: 2;
+    fill: none;
 }
 
 .axis path,
 .axis line {
 	fill: none;
-	stroke: grey;
+	stroke: var(--text);
 	stroke-width: 1;
 	shape-rendering: crispEdges;
+}
+
+.legend {
+    font-size: 12px;
+    color: var(--text);
+}
+rect {
+    stroke-width: 2;
 }

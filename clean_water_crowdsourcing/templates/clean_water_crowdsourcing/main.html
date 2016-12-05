@@ -162,7 +162,7 @@
     </div>
 </div>
 <div class="green-border view-graph-display navigation text-center">
-    <h2 class="pink title" id="graph-title" style="padding: 10px;">Graph for Location</h2>
+    <h3 class="pink title" id="graph-title" style="padding: 10px;">Graph for Location</h3>
     <div class="graph" id="graph">
 
     </div>
@@ -320,9 +320,9 @@
 
     function createGraph(response) {
         d3.select("svg").remove();
-        var	margin = {top: 30, right: 50, bottom: 30, left: 50},
-        width = 380 - margin.left - margin.right,
-        height = 250 - margin.top - margin.bottom;
+        var	margin = {top: 50, right: 80, bottom: 50, left: 80},
+        width = 500 - margin.left - margin.right,
+        height = 280 - margin.top - margin.bottom;
 
         // Parse the date / time
         var	parseDate = d3.time.format("%Y-%m-%d").parse;
@@ -343,11 +343,11 @@
         // Define the line
         var	valueline = d3.svg.line()
             .x(function(reports) { return x(parseDate(reports.date)); })
-            .y(function(reports) { console.log(y(reports.virus_ppm)); return y(reports.virus_ppm); });
+            .y(function(reports) { return y(reports.virus_ppm); });
 
         var contaminantline = d3.svg.line()
             .x(function(reports) { return x(parseDate(reports.date)); })
-            .y(function(reports) { console.log(y(reports.contaminant_ppm)); return y(reports.contaminant_ppm); });
+            .y(function(reports) { return y(reports.contaminant_ppm); });
         // Adds the svg canvas
         var	svg = d3.select("#graph")
             .append("svg")
@@ -367,16 +367,77 @@
             .attr("class", "secondline")
             .attr("d", contaminantline(reports));
 
-        // Add the X Axis
+        svg.append("text")
+        .attr("x", width*1/2 )
+        .attr("y",  220 )
+        .style("text-anchor", "middle")
+        .style("fill", "#46237a")
+        .text("Date/Time");
+
+        svg.append("text")
+        .attr("x", -60 )
+        .attr("y",  100 )
+        .style("text-anchor", "middle")
+        .style("fill", "#46237a")
+        .text("PPM");
+
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis);
 
-        // Add the Y Axis
         svg.append("g")
             .attr("class", "y axis")
             .call(yAxis);
+
+        svg.selectAll("g.dot")
+            .data(reports)
+            .enter().append("g")
+            .attr("class", "dot")
+            .style('fill', '#3ddc97')
+            .selectAll("circle")
+            .data(reports)
+            .enter().append("circle")
+            .attr("r", 3)
+            .attr("cx", function(reports, i) { return x(parseDate(reports.date)); })
+            .attr("cy", function(reports, i) { return y(reports.virus_ppm); })
+
+        svg.selectAll("g.dot_two")
+            .data(reports)
+            .enter().append("g")
+            .attr("class", "dot_two")
+            .style('fill', '#256eff')
+            .selectAll("circle")
+            .data(reports)
+            .enter().append("circle")
+            .attr("r", 3)
+            .attr("cx", function(reports, i) { return x(parseDate(reports.date)); })
+            .attr("cy", function(reports, i) { return y(reports.contaminant_ppm); })
+
+        var legendRectSize = 18;
+        var legendSpacing = 4;
+        var legendVals = [{'name':'virus ppm', color: '#3ddc97'}, {'name':'contaminant ppm', 'color': '#256eff'}];
+        var legend = svg.selectAll('.legend')
+          .data(legendVals)
+          .enter()
+          .append('g')
+          .attr('class', 'legend')
+          .attr('transform', function(d, i) {
+            var height = legendRectSize + legendSpacing;
+            var horz = 14 * legendRectSize;
+            var vert = height -50 + 20*i;
+            return 'translate(' + horz + ',' + vert + ')';
+          });
+        legend.append('rect')
+          .attr('width', legendRectSize)
+          .attr('height', legendRectSize)
+          .style('fill', function(legendVals) { return legendVals.color; })
+          .style('stroke', function(legendVals) { return legendVals.color; });
+        legend.append('text')
+          .attr('x', legendRectSize + legendSpacing)
+          .attr('y', legendRectSize - legendSpacing)
+          .text(function(legendVals) { return legendVals.name; });
+
 
 
 

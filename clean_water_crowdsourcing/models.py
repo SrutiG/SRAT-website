@@ -45,10 +45,6 @@ class WaterPurityReport(models.Model):
     contaminant_ppm = models.IntegerField(null=False)
     report_date = models.DateField(auto_now_add = True)
 
-    def __str__(self):
-        return "Number: " + self.report_number + " Date: " + self.report_date + " Water Location: " + self.water_location + \
-               " Water Condition: " + self.water_condition + " Contaminant PPM: " + str(self.contaminant_ppm) + \
-               " Virus PPM: " + str(self.virus_ppm)
 
 
 
