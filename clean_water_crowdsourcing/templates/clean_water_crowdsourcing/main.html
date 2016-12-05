@@ -216,6 +216,7 @@
         });
 
         var addresses = [{% for report in sourceReports %}'{{ report.water_location }}', {% endfor %}];
+        var reportNums = [{% for report in sourceReports %}'{{ report.report_number }}', {% endfor %}];
 
         for (x = 0; x < addresses.length; x++) {
              var geocoder = new google.maps.Geocoder();
@@ -228,7 +229,7 @@
                     var latitude = results[0].geometry.location.lat();
                     var longitude = results[0].geometry.location.lng();
                     var marker = new google.maps.Marker({
-                    position: {lat: latitude, lng: longitude}, map: map, label: (i+1).toString()});
+                    position: {lat: latitude, lng: longitude}, map: map, label: reportNums[i]});
                     bounds.extend(marker.position);
                }
                map.fitBounds(bounds);
