@@ -325,23 +325,19 @@
         width = 500 - margin.left - margin.right,
         height = 280 - margin.top - margin.bottom;
 
-        // Parse the date / time
         var	parseDate = d3.time.format("%Y-%m-%d").parse;
 
-        // Set the ranges
         var	x = d3.time.scale().range([0, width]);
         var	y = d3.scale.linear().range([height, 0]);
 
         var reports = response["reports"]
 
-        // Define the axes
         var	xAxis = d3.svg.axis().scale(x)
             .orient("bottom").ticks(5);
 
         var	yAxis = d3.svg.axis().scale(y)
             .orient("left").ticks(5);
 
-        // Define the line
         var	valueline = d3.svg.line()
             .x(function(reports) { return x(parseDate(reports.date)); })
             .y(function(reports) { return y(reports.virus_ppm); });
@@ -349,18 +345,17 @@
         var contaminantline = d3.svg.line()
             .x(function(reports) { return x(parseDate(reports.date)); })
             .y(function(reports) { return y(reports.contaminant_ppm); });
-        // Adds the svg canvas
+
         var	svg = d3.select("#graph")
             .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
             .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-        // Get the data
+
         x.domain(d3.extent(reports, function(reports) { return parseDate(reports.date); }));
         y.domain([0, d3.max(reports, function(reports) { return reports.max; })]);
 
-        // Add the valueline path.
         svg.append("path")
             .attr("class", "line")
             .attr("d", valueline(reports));
@@ -419,25 +414,27 @@
         var legendSpacing = 4;
         var legendVals = [{'name':'virus ppm', color: '#3ddc97'}, {'name':'contaminant ppm', 'color': '#256eff'}];
         var legend = svg.selectAll('.legend')
-          .data(legendVals)
-          .enter()
-          .append('g')
-          .attr('class', 'legend')
-          .attr('transform', function(d, i) {
+            .data(legendVals)
+            .enter()
+            .append('g')
+            .attr('class', 'legend')
+            .attr('transform', function(d, i) {
             var height = legendRectSize + legendSpacing;
             var horz = 14 * legendRectSize;
             var vert = height -50 + 20*i;
             return 'translate(' + horz + ',' + vert + ')';
-          });
+        });
+
         legend.append('rect')
-          .attr('width', legendRectSize)
-          .attr('height', legendRectSize)
-          .style('fill', function(legendVals) { return legendVals.color; })
-          .style('stroke', function(legendVals) { return legendVals.color; });
+            .attr('width', legendRectSize)
+            .attr('height', legendRectSize)
+            .style('fill', function(legendVals) { return legendVals.color; })
+            .style('stroke', function(legendVals) { return legendVals.color; });
+
         legend.append('text')
-          .attr('x', legendRectSize + legendSpacing)
-          .attr('y', legendRectSize - legendSpacing)
-          .text(function(legendVals) { return legendVals.name; });
+            .attr('x', legendRectSize + legendSpacing)
+            .attr('y', legendRectSize - legendSpacing)
+            .text(function(legendVals) { return legendVals.name; });
 
 
 

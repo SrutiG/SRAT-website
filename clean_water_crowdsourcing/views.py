@@ -1,11 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.shortcuts import redirect
 from clean_water_crowdsourcing.models import Account
 from clean_water_crowdsourcing.models import WaterPurityReport
 from clean_water_crowdsourcing.models import WaterSourceReport
 from django.core.exceptions import ObjectDoesNotExist
-from django.template.defaulttags import csrf_token
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 
@@ -139,10 +137,9 @@ def getPurityReports(request, location):
     reports = []
     address = request.GET.get('location')
     purityLocations = WaterPurityReport.objects.filter(water_location = address)
-    print(location)
     for item in purityLocations:
-        reports.append({"date": str(item.report_date), "virus_ppm":item.virus_ppm, "contaminant_ppm":item.contaminant_ppm, "max" : max(item.virus_ppm, item.contaminant_ppm)})
+        reports.append({"date": str(item.report_date), "virus_ppm":item.virus_ppm,
+                        "contaminant_ppm":item.contaminant_ppm, "max" : max(item.virus_ppm, item.contaminant_ppm)})
     response_data["reports"] = reports
     response = JsonResponse(response_data)
-    print(response_data)
     return response
